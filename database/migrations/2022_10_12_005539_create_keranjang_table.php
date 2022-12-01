@@ -25,6 +25,7 @@ return new class extends Migration
             $table->string('amount');
             $table->string('qty');
             $table->string('image');
+            $table->string('description');
             $table->timestamps();
         });
     }

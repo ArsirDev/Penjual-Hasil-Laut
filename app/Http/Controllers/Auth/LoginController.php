@@ -22,6 +22,7 @@ class LoginController extends BaseController
             $success['address'] = $user->address;
             $success['status'] = $user->status;
             $success['number_phone'] = $user->number_phone;
+            $success['device_token'] = $user->device_token;
    
             return $this->sendResponse($success, 'User login successfully.');
         } else { 

@@ -22,6 +22,7 @@ return new class extends Migration
             $table->string('address');
             $table->string('status');
             $table->string('number_phone');
+            $table->string('device_token')->nullable();
             $table->rememberToken();
             $table->timestamps();
         });

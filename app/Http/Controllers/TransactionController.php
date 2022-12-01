@@ -26,7 +26,9 @@ class TransactionController extends BaseController
             'payer_name' => auth()->user()->name,
             'amount' => $request->amount,
             'qty' => $request->qty,
-            'image' => $request->image
+            'total_item' => $request->total_item,
+            'image' => $request->image,
+            'description' => $request->description
         ]);
 
         $params = [
@@ -39,5 +41,14 @@ class TransactionController extends BaseController
         $createInvoice = \Xendit\Invoice::create($params);
 
         return $this->sendResponse($createInvoice, "Successfully create Invoice");
+    }
+
+    public function getTransaksi(Request $request)
+    {
+        $id = auth()->user()->id;
+        $success = Transaksi::where('user_id', 'like', "%" . $id . "%")->get();
+
+        return $this->sendResponse($success, "Successfully show transaksi");
+
     }
 }

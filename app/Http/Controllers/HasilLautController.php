@@ -25,7 +25,7 @@ class HasilLautController extends BaseController
             'price' => $request->price,
             'type' => $request->type,
             'image' => asset($path),
-            'description' => $request->description
+            'description' => $request->description,
         ]);
         return $this->sendResponse($success, 'Saved Data successfully.');
     }

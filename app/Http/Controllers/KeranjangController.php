@@ -21,7 +21,8 @@ class KeranjangController extends BaseController
             'payer_name' => auth()->user()->name,
             'amount' => $request->amount,
             'qty' => $request->qty,
-            'image' => $request->image
+            'image' => $request->image,
+            'description' => $request->description,
         ]);
 
         return $this->sendResponse($success, "Successfully insert into cart");

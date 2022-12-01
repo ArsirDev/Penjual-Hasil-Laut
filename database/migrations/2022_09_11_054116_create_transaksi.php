@@ -26,7 +26,9 @@ return new class extends Migration
             $table->string('payer_name');
             $table->integer('amount');
             $table->integer('qty');
+            $table->integer('total_item');
             $table->string('image');
+            $table->string('description');
             $table->timestamps();
         });
     }
